@@ -1,0 +1,136 @@
+.container_empresa_principal{
+    display: flex;
+    align-items: center;
+}
+
+.titulo_empresa{
+    margin-bottom: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo_empresa h1{
+    font-size: 36px;
+    font-weight: 700;
+    width: 15vw;
+    text-align: center;
+}
+
+.titulo_empresa hr{
+    border: 1px solid black;
+    opacity: 1;
+    width: 14vw;
+}
+
+.container_empresa_form {
+    width: 65vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario_empresa{
+    width: 42vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formulario_empresa input {
+    width: 43vw;
+    height: 3.6rem;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    background: #e8e8e8;
+    border: 1px solid #C1C1C1;
+    outline: 0;
+    padding: 0 1.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.buttons_empresa{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons_empresa button {
+    width: 18vw;
+    height: 8vh;
+    margin-left: 8em;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color: #00C74F !important;
+    border: none;
+    box-shadow: 1px 2px 3px rgb(27 27 27);
+    margin: 0;
+}
+
+.buttons_empresa p {
+    font-size: 1.2em;
+    padding: 1.2em;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+}
+
+.buttons_empresa p a{
+    font-weight: 500;
+    color: #FF9313;
+}
+
+.buttons_empresa p a:hover{
+    color: #F56300;
+}
+
+@media(max-width : 1220px){
+    .formulario_empresa input {
+        width: 35vw;
+        height: 2.5rem;
+        font-size: 14px;
+    }
+
+    .buttons_empresa p {
+        font-size: 1em;
+        padding: 1em;
+    }
+
+    .titulo_empresa h1 {
+        font-size: 30px;
+    }
+
+    .buttons_empresa button {
+        width: 17vw;
+        height: 7vh;
+        font-size: 1em;
+    }
+}
+
+@media(max-width : 980px){
+    .formulario_empresa input {
+        width: 40vw;
+    }
+
+    .buttons_empresa p {
+        width: 23vw;
+    }
+}
+
+@media(max-width : 769px){
+    .buttons_empresa p {
+        font-size: 0.8em;
+        padding: 0 0.8em;
+        width: 20vw;
+    }
+
+    .buttons_empresa {
+        width: 85%;
+    }
+}

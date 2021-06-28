@@ -1,0 +1,109 @@
+.container_principal{
+    display: flex;
+    align-items: center;
+}
+
+.container_esqueci_senha_form{
+    width: 65vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo_esqueci_senha{
+    margin-bottom: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo_esqueci_senha h1{
+    font-size: 36px;
+    font-weight: 700;
+    width: 15vw;
+    text-align: center;
+}
+
+.titulo_esqueci_senha hr{
+    border: 1px solid black;
+    opacity: 1;
+    width: 14vw;
+}
+
+.container_esqueci_senha_form p{
+    font-size: 20px;
+    width: 25vw;
+    margin-bottom: 2em;
+
+    text-align: center;
+}
+
+.formulario_esqueci_senha{
+    width: 40vw;
+    height: 25vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formulario_esqueci_senha input{
+    width: 43vw;
+    height: 8vh;
+    font-size: 16px;
+    margin-top: 0.5rem;
+    background: #f7f7f7;
+    border: 1px solid #C1C1C1;
+    outline: 0;
+    padding: 0 1.5rem;
+    font-family: 'Raleway', sans-serif; 
+}
+
+.buttons_esqueci_senha{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons_esqueci_senha .cancel{
+    width: 10vw;
+    height: 8vh;
+    font-size: 18px;
+    background-color: #808080!important;
+    border: 1px solid #545454;
+    box-shadow: 1px 2px 3px rgb(27, 27, 27);
+    margin: 0;
+}
+
+.buttons_esqueci_senha .confirm{
+    width: 18vw;
+    height: 8vh;
+    margin-left: 8em;
+
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #00C74F !important;
+    border: none;
+    box-shadow: 1px 2px 3px rgb(27, 27, 27);
+    margin: 0;
+}
+
+@media(max-width : 1024px){
+    .titulo_esqueci_senha h1 {
+        font-size: 30px;
+    }
+
+    .titulo_esqueci_senha hr {
+        width: 12vw;
+    }
+
+    .container_esqueci_senha_form p {
+        width: 35vw;
+    }
+}

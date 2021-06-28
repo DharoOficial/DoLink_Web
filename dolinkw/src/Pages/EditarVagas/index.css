@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.textarea-edit input[type="text"],
+.textarea-edit input[type="password"],
+.textarea-edit input[type="tel"],
+.textarea-edit textarea {   
+  width: 25vw;
+  color: black;
+  padding: 15px;
+  margin-left: 38vw;
+}
+.main{
+    width: 100%;
+    height: 100%;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+}
+.titulo hr{
+    width: 300px;
+    height: 2px;
+    background-color: black;
+}
+.esp{
+    width: 28px;
+    height: 90px;
+}
+.titulo h1{
+    font-size: x-large;
+}
+.image{
+    margin-left: 900px;
+
+}
+input[name="beneficios novo"]{
+    margin-left: 450px;
+    background-color: white;
+    border: none;
+    width: 600px;
+   
+    
+}
+input[name="local novo"]{
+    margin-left: 450px;
+    background-color: white;
+    border: none;
+    width: 600px;
+}
+input[name="faixasalarial nova"]{
+    margin-left: 450px;
+    background-color: white;
+    border: none;
+    width: 600px;
+}
+input[name="titulo novo"]{
+    margin-left: 450px;
+    background-color: white;
+    border: none;
+    width: 600px;
+}
+
+input[name="descricao nova"]{
+    margin-left: 450px;
+    background-color: white;
+    border: none;
+    width: 600px;
+    
+}
+
+.input-btn2{
+    width: 25vw;
+    height: 40px;
+    background-color: #FF9313;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    position: relative;
+    margin-left: 780px;
+    margin-top: 40px;
+    font-size: 25px;
+}

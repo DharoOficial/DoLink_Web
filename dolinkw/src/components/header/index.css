@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+.cabecalho{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1A82D6;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+    
+}
+.botoes{
+    width: 100%;
+    height: 100%;
+    margin-right: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.logo{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    width: 180px;
+    height: 40px;
+}
+.buttonIn {
+    background-color: #1A82D6; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.buttonIn:hover {
+    color: white;
+    background-color: #136eb9;
+}
+
+.buttonUp{
+    background-color: #00C74F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-left: 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.buttonUp:hover{
+    color: white;
+    background-color: #10A94D;
+}
+
+
+.buttonPerfilCompany {
+    background-color: #1A82D6; 
+    border: none;
+    color: white;
+    padding: 25px 32px;
+    font-size: 16px;
+    border-radius: 6px 0px 0px 6px;
+    text-decoration: none;
+}
+.buttonPerfilCompany:hover {
+    color: white;
+    background-color: #136eb9;
+}
+.buttonCadastroVagasCompany {
+    background-color: #1A82D6; 
+    border: none;
+    color: white;
+    padding: 25px 32px;
+    font-size: 16px;
+    border-radius: 0px 0px 0px px;
+    text-decoration: none;
+}
+.buttonCadastroVagasCompany:hover {
+    color: white;
+    background-color: #136eb9;
+}
+.buttonExitCompany {
+    background-color: #1A82D6; 
+    border: none;
+    color: white;
+    padding: 25px 32px;
+    font-size: 16px;
+    border-radius: 0px 6px 6px 0px;
+    text-decoration: none;
+}
+.buttonExitCompany:hover {
+    color: white;
+    background-color: #136eb9;
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    
+    }
+
+    .cabecalho{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #1A82D6;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+        
+    }
+
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    
+    }
+
+    .cabecalho{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #1A82D6;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+        
+    }
+
+}
+
+@media (min-width: 640px) and (max-width: 720px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    
+    }
+
+    .cabecalho{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #1A82D6;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+        
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    
+    }
+
+    .cabecalho{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #1A82D6;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+        
+    }
+
+}
+

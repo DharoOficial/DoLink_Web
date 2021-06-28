@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import { Carousel } from "react-bootstrap";
 import "./index.css";
 import Acessiblidade from '../../utils/acessibility'
+  
 
 const Home = () => {
   

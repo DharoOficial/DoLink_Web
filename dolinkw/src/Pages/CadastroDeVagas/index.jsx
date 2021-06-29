@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Form, Button, ProgressBar } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom';
+import {  useHistory  } from 'react-router-dom';
 import warningIcon from '../../imgs/icons/warning.svg'
 import Header from "../../components/header";
 import Footer from "../../components/footer"
@@ -8,8 +8,6 @@ import jwtDecode from 'jwt-decode';
 import http from '../../utils/http-axious';
 import "./index.css";
 import { useToasts } from 'react-toast-notifications';
-import Acessiblidade from '../../utils/acessibility'
-
 
 
 
@@ -25,7 +23,7 @@ const CadastroDeVagas = () => {
     const [descricao, setDescricao] = useState("");
     const [beneficios, setBeneficios] = useState("");
     const [skillItems, setSkillItems] = useState([{
-        id: "", nome: "", nivel: 0, hash: "", tipo: 1
+        id: "", nome: "", nivel: 0, hash: "", tipo : 1
     }])
     const [skillDesejadaItems, setSkillDesejadaItems] = useState([{
         id: "", nome: "", nivel: 0, hash: "", tipo : 2
@@ -42,7 +40,9 @@ const CadastroDeVagas = () => {
                     [campo.split('|')[0]]: valor.split('|')[0],
                     [campo.split('|')[1]]: valor.split('|')[1],
                     [campo.split('|')[2]]: valor.split('|')[2],
-                    ['nivel']: valor }
+                    ['nivel']: valor,
+                    ['tipo'] : 1
+                }
             }
 
             return skillItem;
@@ -58,7 +58,9 @@ const CadastroDeVagas = () => {
                     [campo.split('|')[0]]: valor.split('|')[0],
                     [campo.split('|')[1]]: valor.split('|')[1],
                     [campo.split('|')[2]]: valor.split('|')[2],
-                    ['nivel']: valor }
+                    ['nivel']: valor,
+                    ['tipo'] : 2
+                }
             }
 
             return skillDesejadaItem;
@@ -90,16 +92,15 @@ const CadastroDeVagas = () => {
     }
 
     useEffect(() => {
-        listarSkills();
-        Acessiblidade();
-    }, []);
+        listarSkills()
+    }, [])
 
     const cadastrar = (event) => {
         event.preventDefault();
 
         var allSkills = skillItems.concat(skillDesejadaItems)
 
-        fetch('https://localhost:44380/v1/vagancy/create', {
+        fetch('https://dolink.azurewebsites.net/v1/vagancy/create', {
             method: "POST",
             body: JSON.stringify({
                 idEmpresa: idEmpresa,
@@ -112,6 +113,7 @@ const CadastroDeVagas = () => {
             }),
             headers: {
                 "content-type": "application/json",
+                "Authorization" : `Bearer ${token}`
             },
         }).then(resultado => resultado.json())
         .then(resultado => {
@@ -139,8 +141,11 @@ const CadastroDeVagas = () => {
     };
 
     const listarSkills = () => {
-        http.get('https://localhost:44380/v1/skills', {
-            method: 'GET'
+        http.get('https://dolink.azurewebsites.net/v1/skills', {
+            method: 'GET',
+            headers : {
+                'Authorization' : `Bearer ${token}`
+            }
         })
         .then(resultado => {
             setSkills(resultado.data.data);
@@ -272,8 +277,8 @@ const CadastroDeVagas = () => {
                     </fieldset>
                     <footer>
                         <p>
-                            <img src={warningIcon} alt="Aviso importante" />
-                            Importante! <br />
+                            <img src={warningIcon} alt="Aviso importante"/>
+                            Importante! <br/>
                             Preencha todos os dados
                         </p>
                         {
@@ -284,7 +289,7 @@ const CadastroDeVagas = () => {
                         }
                     </footer>
                 </Form>
-            </main>
+            </main>            
             <Footer className="rodapeVagas" />
         </div>
     )

@@ -8,69 +8,56 @@ import {  useToasts  } from 'react-toast-notifications';
 import {useHistory} from 'react-router-dom';
 import LinkedIn from '../../Pages/LinkedinReact';
 import { HistoryRounded } from '@material-ui/icons';
-import { url } from '../../utils/constants';
+import { url, publish } from '../../utils/constants';
 import jwt_decode from 'jwt-decode';
 import Acessiblidade from '../../utils/acessibility'
 
 const Login = () => {
+    const { addToast } = useToasts();
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
     useEffect(() => {
         Acessiblidade()
-      }, []);
-
-    const { addToast } = useToasts();
-
-    const history = useHistory();
-
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    }, []);
 
     const logar = (event) => {
         event.preventDefault();
 
-        fetch(url + 'account/signin' ,{
-
+        fetch(`${publish}/account/signin` ,{
             method : 'POST',
             body: JSON.stringify({
-
                 Email: email,
                 Senha: senha,
             }),
             headers: {
-
                 'content-type' : 'application/json'
-
             }
-            })
-            .then(resultado => resultado.json())
-            .then(resultado => {
+        })
+        .then(resultado => resultado.json())
+        .then(resultado => {
+            console.log(resultado.data)
+            if(resultado.data.token !== "") {
+                addToast(resultado.mensagem, { appearance: 'success', autoDismiss : true })
+                localStorage.setItem('token-dolink', resultado.data.token);
+                const token = localStorage.getItem('token-dolink');
 
-                if(resultado.sucesso) {
-
-                    addToast(resultado.mensagem, { appearance: 'success', autoDismiss : true })
-                    localStorage.setItem('token-dolink', resultado.data.token);
-                    console.log(resultado);
-                    const token = localStorage.getItem('token-dolink');
-
-                    if(jwt_decode(token).Role === "Empresa") {
-
-                        history.push('/cadastrodevagas')
-
-                    } else if (jwt_decode(token).Role === "Profissional") {
-
-                        //Alterar para /matchProfissional após fazer cadastro com login incluso
-                        history.push('/matchProfissional')
-
-                    } else {
-
-                        addToast(resultado.mensagem, { appearance: 'error', autoDismiss : true })
-
-                    }
+                if(jwt_decode(token).Roles === "Empresa") {
+                    history.push('/vagancy/create')
+                    
+                } else if (jwt_decode(token).Roles === "Profissional") {
+                    
+                    history.push('/professional/prematch')
                 }
-            })
-            .catch(erro => {
-                console.error('erro na API ' + erro);
-            })
+                
+            }else{
+                addToast(resultado.mensagem, { appearance: 'error', autoDismiss : true })                
+            }
+        })
+        .catch(erro => {
+            console.error('erro na API ' + erro);
+        })
     }
 
 

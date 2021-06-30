@@ -6,7 +6,7 @@ import { Table, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import empresaServico from '../../servicos/empresaServico';
-import { url } from '../../utils/constants';
+import { url, publish } from '../../utils/constants';
 import { useFormik } from 'formik';
 import { useToasts } from 'react-toast-notifications';
 import Acessiblidade from '../../utils/acessibility'
@@ -20,9 +20,7 @@ const ListagemVagas = () => {
     const [empresa, setEmpresa] = useState('');
     const [vagas, setVagas] = useState([]);
     const [statusVaga, setStatusVaga] = useState([]);
-    
     const [termo, setTermo] = useState('')
-    
     const token = localStorage.getItem('token-dolink');
     const idEmpresa = jwtDecode(token).Id;
     
@@ -31,18 +29,21 @@ const ListagemVagas = () => {
         listarVagas();
     }, []);
 
-
-
     const listarVagas = () => {
-        empresaServico
-            .listarvagas(idEmpresa)
-            .then(resultado => {
-                setVagas(resultado.data.data);
-                console.log(resultado.data.data);
-            })
-            .catch(erro => {
-                console.error(`erro ${erro}`);
-            })
+        fetch(`${publish}/company/vagancy/${idEmpresa}`, {
+            headers : {
+                "Authorization" : `Bearer ${token}`
+            }
+        })
+        .then(resultado => resultado.json())
+        .then(resultado => {
+            setVagas(resultado.data);
+            console.log("oajdnfó~sdinb")
+            console.log(resultado);
+        })
+        .catch(erro => {
+            console.error(`erro ${erro}`);
+        })
             
     }
 
@@ -50,13 +51,13 @@ const ListagemVagas = () => {
         let body;
         console.log(item)
         if(status === "Padrao"){
-            body= {
+            body = {
                 status : 1,
                 id : item
             }
         }
         else{
-             body= {
+             body = {
                 status : 0,
                 id : item
             }
@@ -64,11 +65,15 @@ const ListagemVagas = () => {
         console.log(item)
 
         event.preventDefault();
-        empresaServico
-        .alterarStatus(body)
+        fetch(`${publish}/vagancy/update/state/`, {
+            method : "PUT",
+            body : JSON.stringify(body),
+            headers : {
+                "Authorization" : `Bearer ${token}`
+            }
+        })
         
         window.location.reload()
-
     }
 
     const Botao = (status, id) => {

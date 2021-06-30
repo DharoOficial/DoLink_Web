@@ -123,7 +123,7 @@ const PerfilEmpresa = () => {
             <div className="container_perfil_empresa_form">
             <Form className="formulario_perfil_empresa">
                     <fieldset>
-                        <legend>Dados a empresa <hr/></legend>
+                        <legend>Dados da empresa <hr/></legend>
                         <div className="campos">
                             <div className="formFile">
                                 <Form.Group controlId="formBasicFile" className="input-block-file">

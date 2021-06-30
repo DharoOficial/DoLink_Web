@@ -31,24 +31,24 @@ const routing = (
   <Router>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/linkedinpopup" component={LinkedInPopUp} />
-      <Route path="/linkedin" component={LinkedInPage} />
-      <Route path="/choosesignup" component={EscolhaCadastro}/>
-      <Route path="/cadastroprofissional" component={CadastroProfissional}/>
-      <Route path="/cadastrodevagas" component={CadastroDeVagas}/>
-      <Route path="/CadastroEmpresa" component={CadastroEmpresa}/>
-      <Route path="/EditarVagas" component={EditarVagas}/>
-      <Route path="/empresa/editar" component={EditarEmpresa}/>
-      <Route path="/ListagemVagas" component={ListagemVagas}/>
-      <Route path="/ListagemVagaEspecifica" component={ListagemVagaEspecifica}/>
-      <Route path="/perfilEmpresa" component={PerfilEmpresa}/>
-      <Route path="/perfilProfissional" component={PerfilProfissional}/>
-      <Route path="/matchProfissional" component={MatchProfissional}/>
-      <Route path="/matchConfirmadoProfissional" component={MatchConfirmadoProf}/>
-      <Route path="/dadosProfissional" component={DadosProfissional}/>
-      <Route path="/esqueciminhasenha" component={EsqueciMinhaSenha}/>
-      <Route path="/EditarProfissional" component={EditarProfissional}/>
-      <Route path="/AlterarSenha" component={AlterarSenha}/>
+      {/* <Route exact path="/linkedinpopup" component={LinkedInPopUp} /> */}
+      {/* <Route path="/linkedin" component={LinkedInPage} /> */}
+      <Route path="/choose/signup" component={EscolhaCadastro}/>
+      <Route path="/professional/create" component={CadastroProfissional}/>
+      <Route path="/vagancy/create" component={CadastroDeVagas}/>
+      <Route path="/company/create" component={CadastroEmpresa}/>
+      <Route path="/vagancy/edit" component={EditarVagas}/>
+      <Route path="/company/edit" component={EditarEmpresa}/>
+      <Route path="/vagancy" component={ListagemVagas}/>
+      <Route path="/vagancy/data" component={ListagemVagaEspecifica}/>
+      <Route path="/company/data" component={PerfilEmpresa}/>
+      <Route path="/professional/data" component={PerfilProfissional}/>
+      <Route path="/professional/prematch" component={MatchProfissional}/>
+      <Route path="/professional/matchs" component={MatchConfirmadoProf}/>
+      <Route path="/professional/data" component={DadosProfissional}/>
+      <Route path="/forget/password" component={EsqueciMinhaSenha}/>
+      <Route path="/professional/edit" component={EditarProfissional}/>
+      <Route path="/update/password" component={AlterarSenha}/>
       <Route path="/login" component={Login}/>
     </Switch>
   </Router>

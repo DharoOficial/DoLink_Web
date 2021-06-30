@@ -1,5 +1,5 @@
 import {useState, React, useEffect} from 'react';
-import {  url, urlLucas } from '../../utils/constants';
+import {  url, urlLucas, publish } from '../../utils/constants';
 import {useHistory} from 'react-router-dom';
 import {  useToasts  } from 'react-toast-notifications';
 import Banner from '../../components/banner'
@@ -24,7 +24,7 @@ const CadastroProfissional = () => {
 
     const login = (email, senha) => {
 
-        fetch(`${urlLucas}account/signin`, {
+        fetch(`${publish}/account/signin`, {
             method: 'POST',
             body: JSON.stringify({
                 Email: email,
@@ -39,7 +39,7 @@ const CadastroProfissional = () => {
                     console.log(resultado)
                     addToast(resultado.mensagem, { appearance: 'success', autoDismiss : true })
                     localStorage.setItem('token-dolink', resultado.data.token);
-                    history.push('/perfilProfissional');
+                    history.push('/professional/edit');
                 } else {
                     addToast(resultado.mensagem, { appearance: 'error', autoDismiss : true })
                 }
@@ -49,7 +49,7 @@ const CadastroProfissional = () => {
     const cadastrar = (event) =>{
         event.preventDefault();
 
-        fetch(`${urlLucas}professional/signup`,{
+        fetch(`${publish}/professional/signup`,{
             method: 'POST',
             body: JSON.stringify({
                 Nome: nome,

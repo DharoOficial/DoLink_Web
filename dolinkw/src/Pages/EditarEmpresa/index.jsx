@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useToasts } from 'react-toast-notifications';
 import { Form, Button } from 'react-bootstrap'
 import { useHistory } from "react-router-dom";
-import { url, urlLucas } from "../../utils/constants";
+import { url, urlLucas, publish } from "../../utils/constants";
 import Header from "../../components/header";
 import Rodape from "../../components/footer";
 import jwtDecode from "jwt-decode";
@@ -40,9 +40,12 @@ const EditarEmpresa = () => {
         formdata.set('dominio', dominio);
         formdata.append('arquivo', arquivo);
 
-        fetch(`${urlLucas}company/update/general`, {
+        fetch(`${publish}/company/update/general`, {
             method : "PUT",
-            body : formdata
+            body : formdata,
+            headers : {
+                "Authorization" : `Bearer ${token}`
+            }
         })
         .then(response => response.json())
         .then(response => {
@@ -60,10 +63,9 @@ const EditarEmpresa = () => {
                     return addToast(mensagem, { appearance: 'error', autoDismiss: true })
                 })
             }
-
             if(response.sucesso){
                 addToast(response.mensagem, { appearance: 'success', autoDismiss : true })
-                history.push('/cadastrodevagas')
+                history.push('/vagancy/create')
             }
         })
     }

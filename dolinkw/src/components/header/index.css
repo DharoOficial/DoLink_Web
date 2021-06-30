@@ -76,7 +76,7 @@
     color: white;
     background-color: #136eb9;
 }
-.buttonCadastroVagasCompany {
+.buttonCadastroVagasCompany, .buttonSeePreMatch {
     background-color: #1A82D6; 
     border: none;
     color: white;
@@ -85,7 +85,7 @@
     border-radius: 0px 0px 0px px;
     text-decoration: none;
 }
-.buttonCadastroVagasCompany:hover {
+.buttonCadastroVagasCompany:hover, .buttonSeePreMatch:hover {
     color: white;
     background-color: #136eb9;
 }

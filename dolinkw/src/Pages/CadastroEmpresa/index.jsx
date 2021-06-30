@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Banner from '../../components/banner'
 import { Form, Button } from 'react-bootstrap'
-import { url, urlLucas } from '../../utils/constants'
+import { url, urlLucas, publish } from '../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import { useToasts } from 'react-toast-notifications'
 import Acessiblidade from '../../utils/acessibility'
@@ -16,7 +16,7 @@ const CadastroEmpresa = () => {
     const [telefone, setTelefone] = useState('');
 
     const Login = (email, senha) => {
-        fetch(`${urlLucas}account/signin`, {
+        fetch(`${publish}/account/signin`, {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -33,7 +33,7 @@ const CadastroEmpresa = () => {
 
                 addToast(resultado.mensagem, { appearance: 'success', autoDismiss : true })
                 localStorage.setItem('token-dolink', resultado.data.token);
-                history.push('/empresa/editar');
+                history.push('/company/edit');
             } else {
                 addToast(resultado.mensagem, { appearance: 'error', autoDismiss : true })
             }
@@ -43,7 +43,7 @@ const CadastroEmpresa = () => {
     const cadastrar = (event) => {
         event.preventDefault();
 
-        fetch(`${urlLucas}company/signup`, {
+        fetch(`${publish}/company/signup`, {
             method: 'POST',
             headers : {
                 'content-type' : 'application/json'

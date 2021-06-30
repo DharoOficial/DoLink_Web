@@ -121,7 +121,7 @@ const CadastroDeVagas = () => {
 
             if(resultado.sucesso){
                 addToast(resultado.mensagem, { appearance: 'success', autoDismiss : true })
-                history.push('/ListagemVagas');
+                history.push('/vagancy');
 
             }else{
                 resultado.data.map((erro, index) => {

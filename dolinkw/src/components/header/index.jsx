@@ -29,11 +29,11 @@ const Header = () => {
                     </div>
                     <div className="botoes">
                         <a className="buttonIn" href="/login">Sign In</a>
-                        <a className="buttonUp" href="/choosesignup"> Sign Up</a>
+                        <a className="buttonUp" href="/choose/signup"> Sign Up</a>
                     </div>
                 </div>
             );
-        } else if (jwt_decode(token).Role === "Empresa") {
+        } else if (jwt_decode(token).Roles === "Empresa") {
             // Role = 2 (Administrador)
             // Role = 3 (Padrão)
             return (
@@ -42,14 +42,14 @@ const Header = () => {
                     <img src={logo} alt="logo da empresa Dolink" />
                 </div>
                 <div className="botoes">
-                    <a className="buttonPerfilCompany" href="/perfilEmpresa" >Empresa</a>
-                    <a className="buttonCadastroVagasCompany" href="/cadastrodevagas" >Cadastro - Vagas</a>
-                    <a className="buttonCadastroVagasCompany" href="/ListagemVagas" >Vagas</a>
+                    <a className="buttonPerfilCompany" href="/company/data" >Empresa</a>
+                    <a className="buttonCadastroVagasCompany" href="/vagancy/create" >Cadastro - Vagas</a>
+                    <a className="buttonCadastroVagasCompany" href="/vagancy" >Vagas</a>
                     <a className="buttonExitCompany"hreft="" onClick={event => sair(event)}>Sair</a>
                 </div>
                 </div>
             )
-        } else if (jwt_decode(token).Role === "Profissional") {
+        } else if (jwt_decode(token).Roles === "Profissional") {
             return (
                 <div className="cabecalho">
                 <div className="logo">
@@ -57,8 +57,9 @@ const Header = () => {
                 </div>
                 <div className="botoes">
                     {/* Alterar para /dadosProfissional após fazer cadastro com login incluso */}
-                    <a className="buttonPerfilCompany" href="/dadosProfissional">Profissional</a>
-                    <a className="buttonCadastroVagasCompany" href="/matchProfissional">Match</a>
+                    <a className="buttonPerfilCompany" href="/professional/data">Profissional</a>
+                    <a className="buttonSeePreMatch" href='/professional/prematch'>Recomendações</a>
+                    <a className="buttonCadastroVagasCompany" href="/professional/matchs">Match</a>
                     <a className="buttonExitCompany"hreft="" onClick={event => sair(event)}>Sair</a>
                 </div>
                 </div>
@@ -72,7 +73,7 @@ const Header = () => {
                 </div>
                 <div className="botoes">
                     <a className="buttonIn" href="/login">Sign In</a>
-                    <a className="buttonUp" href="/choosesignup"> Sign Up</a>
+                    <a className="buttonUp" href="/choose/signup"> Sign Up</a>
                 </div>
             </div>
             )

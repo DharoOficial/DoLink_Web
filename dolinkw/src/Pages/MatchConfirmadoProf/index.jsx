@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react';
 import Header from '../../components/header';
 import Rodape from '../../components/footer';
 import jwtDecode from 'jwt-decode';
-import {  url  } from '../../utils/constants';
+import {  url, publish  } from '../../utils/constants';
 import {  useHistory  } from 'react-router-dom';
 import './index.css'
 import empresaServico from '../../servicos/empresaServico';
@@ -32,11 +32,16 @@ const MatchConfirmadoProf = () => {
 
     const listarMatch = () => {
 
-        empresaServico
-        .listarmatch(idProfissional)
+       fetch(`${publish}/match/search/${idProfissional}`, {
+           method : 'GET',
+           headers : {
+               'Authorization' : `Bearer ${token}`
+           }
+       })
+       .then(resultado => resultado.json())
         .then(resultado => {
-
-            setMatchs(resultado.data.data)
+            
+            setMatchs(resultado.data)
 
         })
         .catch(erro =>{
@@ -47,7 +52,7 @@ const MatchConfirmadoProf = () => {
     const excluirMatch = (event, id) => {
         event.preventDefault();
 
-        fetch(url + 'match/remove/' + id, {
+        fetch(`${publish}match/remove/` + id, {
             method: 'DELETE',
             headers: {
                 'authorization': 'Bearer ' + token,
@@ -100,7 +105,7 @@ const MatchConfirmadoProf = () => {
                                             <div className="cardsDeMatch">
                                                 <div className="cardiparaEstilizacaoDeListagemDeMatch">
                                                     <p className="TituloCardaMatch">{item.dadosVaga.titulo}</p>
-                                                    <p style={{ 'margin-bottom': '0.6em', 'maxWidth' : '95%'  }}>{item.dadosVaga.descricao}</p>
+                                                    <p style={{ 'margin-bottom': '0.6em', 'maxWidth' : '95%'  }}>{item.dadosVaga.descricao.substring(0, 100)}...</p>
                                                     <p style={{ 'margin-bottom': '0.6em' }}>Local: {item.dadosVaga.local}</p>
                                                     
                                                     <button onClick={e => excluirMatch(e, item.id)} className="botaoRemoverMatch"  type="submit">Cancelar Match!</button>

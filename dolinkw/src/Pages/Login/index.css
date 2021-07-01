@@ -8,10 +8,9 @@
 
 
 .bodyLogin {
-
-    width: 100vw;
-    height: 100vh;
     background-color: #F8EFEF;
+    display: flex;
+    justify-content: space-around;
 
 }
 
@@ -23,18 +22,9 @@
 
 }
 
-.sectionImageLogin img {
-
-    width: 100%;
-    height: 100%;                                                                                                                    
-
-}
-
 .sectionContentLogin {
-
+    margin-top: 5em;
     width: 55%;
-    height: 100%;
-    margin-left: 45%;
     margin-bottom: 10vh;
 
 }
@@ -54,13 +44,11 @@
 }
 
 .firstLinhaLogin {
-
+    margin-bottom: 5em;
     width: 60%;
-    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    margin-bottom: 5vh;
     margin-left: 10vw;
     justify-content: space-evenly;
 }
@@ -68,7 +56,6 @@
 
 .secondLinhaLogin {
 
-    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -106,11 +93,9 @@
 
 
 .botoesSigninLogin {
-
+    margin: 0 auto;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 
 }
@@ -128,7 +113,7 @@
 }
 
 .middleSectionLogin {
-
+    padding-top: 8em;
     height: 75%;
     display: flex;
     justify-content: center;    
@@ -158,4 +143,24 @@
 
 }
 
+.formulario_login{
+    margin: 0 auto;
+    width: 33vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.formulario_login input {
+    width: 33vw;
+    height: 3.6rem;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    background: #e8e8e8;
+    border: 1px solid #C1C1C1;
+    outline: 0;
+    padding: 0 1.5rem;
+    font-family: 'Raleway', sans-serif;
+}

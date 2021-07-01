@@ -1,6 +1,7 @@
 import {  useEffect, useState,  React} from 'react';
 import './index.css';
 import empresaServico from '../../servicos/empresaServico';
+import { url, publish } from '../../utils/constants';
 import jwtDecode from 'jwt-decode';
 import {  Button, Table  } from 'react-bootstrap';
 import Header from '../../components/header';
@@ -39,15 +40,18 @@ const ListagemVagaEspecifica = (props) => {
     }, []);
     
     const listarVaga = () => {
-        empresaServico
-        .listarvaga(IdVaga)
+        fetch(`${publish}/vagancy/search/id/${IdVaga}`, {
+            method : 'GET',
+            headers : {
+                'Authorization' : `Bearer ${token}`
+            }
+        })
         .then(resultado =>{
             setTitulo(resultado.data.data.titulo)
             setFaixaSalarial(resultado.data.data.faixaSalarial)
             setLocal(resultado.data.data.local)
             setDescricao(resultado.data.data.descricao)
             setBeneficios(resultado.data.data.beneficios)
-            console.log(resultado.data.data)
         })
         .catch(erro =>{
             console.error(`erro ${erro}`);
@@ -56,15 +60,19 @@ const ListagemVagaEspecifica = (props) => {
 
     const listarMatch = () => {
 
-        empresaServico
-        .listarmatch(IdVaga)
+        fetch(`${publish}/match/search/${IdVaga}`, {
+            method : 'GET',
+            headers : {
+                'Authorization' : `Bearer ${token}`
+            }
+        })
+        .then(resultado => resultado.json())
         .then(resultado => {
 
-            setNome(resultado.data.data.nome)
-            setEmail(resultado.data.data.email)
-            setTelefone(resultado.data.data.telefone)
-            setProfissionais(resultado.data.data)
-            console.log(resultado)
+            setNome(resultado.data.nome)
+            setEmail(resultado.data.email)
+            setTelefone(resultado.data.telefone)
+            setProfissionais(resultado.data)
 
         })
         .catch(erro =>{

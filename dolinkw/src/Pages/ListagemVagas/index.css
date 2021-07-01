@@ -76,12 +76,12 @@ background-color: rgb(255, 255, 255);
     margin-top: 2vh;
 }
 
-.sectionDeCardsDasVagas{
+.sectionDeCardsDasVagas {
     max-height: 31em;
     overflow-y: auto;
     width: 40vw;
-    min-width: 40vw;
-    margin-right: 15vw;
+    min-width: 50vw;
+    margin-right: 4vw;
     display: flex;
     justify-content: space-between;
     word-wrap: break-word;

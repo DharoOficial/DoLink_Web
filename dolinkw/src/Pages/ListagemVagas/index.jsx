@@ -181,10 +181,10 @@ const ListagemVagas = () => {
                                                     {Botao(item.status, item.id)}
                                                     <p className="TituloCardaVagas">{item.titulo}</p>
                                                 </div>
-                                                <p style={{ 'margin-bottom': '0.6em', 'maxWidth': '95%' }}>Descrição: {item.descricao}</p>
+                                                <p style={{ 'margin-bottom': '0.6em', 'maxWidth': '95%' }}>Descrição: {item.descricao.substring(0, 60)}...</p>
                                                 <p style={{ 'margin-bottom': '0.6em' }}>Local: {item.local}</p>
                                                 <p style={{ 'margin-bottom': '0.6em' }}>Faixa Salarial: R$ {item.faixaSalarial}</p>
-                                                <button className="botaoVerVaga"><Link to={{ pathname: '/ListagemVagaEspecifica', state: { IdVaga: item.id } }}>Ver Matchs</Link></button>
+                                                <button className="botaoVerVaga"><Link to={{ pathname: '/vagancy-details', state: { IdVaga: item.id } }}>Ver Matchs</Link></button>
                                             </div>
                                         </div>
                                     </div>

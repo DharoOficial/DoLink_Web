@@ -14,7 +14,7 @@ import CadastroDeVagas from './Pages/CadastroDeVagas';
 import CadastroEmpresa from './Pages/CadastroEmpresa';
 import EditarVagas from './Pages/EditarVagas';
 import ListagemVagas from './Pages/ListagemVagas';
-import ListagemVagaEspecifica from './Pages/ListagemVagaEspecifica';
+import DadosDaVaga from './Pages/ListagemVagaEspecifica';
 import PerfilEmpresa from './Pages/PerfilEmpresa';
 import Login from './Pages/Login';
 import EsqueciMinhaSenha from './Pages/EsqueciMinhaSenha';
@@ -40,7 +40,7 @@ const routing = (
       <Route path="/vagancy/edit" component={EditarVagas}/>
       <Route path="/company/edit" component={EditarEmpresa}/>
       <Route path="/vagancy" component={ListagemVagas}/>
-      <Route path="/vagancy/data" component={ListagemVagaEspecifica}/>
+      <Route path="/vagancy-details" component={DadosDaVaga}/>
       <Route path="/company/data" component={PerfilEmpresa}/>
       <Route path="/professional/data" component={PerfilProfissional}/>
       <Route path="/professional/prematch" component={MatchProfissional}/>

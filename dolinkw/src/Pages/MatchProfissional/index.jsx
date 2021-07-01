@@ -31,15 +31,14 @@ const MatchProfissional = () => {
     }, [])
     
     const listarPreMatch = () => {
-        http.get('https://localhost:5001/v1/vagancy/prematch/' + idProfissional, {
+        http.get('https://dolink.azurewebsites.net/v1/vagancy/prematch/' + idProfissional, {
             method: 'GET',
-
             body: JSON.stringify({
-
                 idVaga: idVaga
-
-            })
-
+            }),
+            headers : {
+                'Authorization' : `Bearer ${token}`
+            }
         })
             .then(resultado => {
                 setVagas(resultado.data.data);
@@ -51,7 +50,7 @@ const MatchProfissional = () => {
     const darMatch = (event, id) => {
         event.preventDefault();
 
-        fetch('https://localhost:5001/v1/match', {
+        fetch('https://dolink.azurewebsites.net/v1/match', {
             method: 'POST',
             body: JSON.stringify({
 
@@ -60,7 +59,8 @@ const MatchProfissional = () => {
 
             }),
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'Authorization' : `Bearer ${token}`
             },
         })
             .then(resultado => resultado.json())
@@ -84,12 +84,12 @@ const MatchProfissional = () => {
             <div className="titulo">
                 <hr className="linha" />
                 <div className="esp"></div>
-                <h1>Matchs</h1>
+                <h1>Vagas compatíveis</h1>
                 <div className="esp"></div>
                 <hr className="linha" />
             </div>
 
-            <a className="linkMatchsConfirmados" href="/matchConfirmadoProfissional">Ver Matchs Confirmados</a>
+            <a className="linkMatchsConfirmados" href="/professional/matchs">Ver Matchs Confirmados</a>
 
             <main>
                 <div className="estilizacaoDePaginaListagemMatch">
@@ -108,7 +108,7 @@ const MatchProfissional = () => {
                                             <div className="cardsDeMatch">
                                                 <div className="cardiparaEstilizacaoDeListagemDeMatch">
                                                     <p className="TituloCardaMatch">{item.titulo}</p>
-                                                    <p style={{ 'margin-bottom': '0.6em', 'maxWidth': '95%' }}>{item.descricao}</p>
+                                                    <p style={{ 'margin-bottom': '0.6em', 'maxWidth': '95%' }}>{item.descricao.substring(0, 60)}...</p>
                                                     <p style={{ 'margin-bottom': '0.6em' }}>Faixa Salarial:</p>
                                                     <p style={{ 'margin-bottom': '0.6em' }}>R${item.faixaSalarial}</p>
     

@@ -5,57 +5,43 @@
     text-decoration: none;
 }
 
+.sectionEscolha {
+    display: flex;
+    flex-direction: row-reverse;
+}
 
-.body {
-
-    height: 100vh;
-
+.back-pag {
+    width: 4vw;
+    margin: 30px 0px 0px 30px;
+    position: relative;
+    cursor: pointer;
+    position: absolute;
 }
 
 .sectionLargura1 {
-
     width: 100%;
-    margin: 0 auto;
     background-color: #f5f5f5;
-
 }
 
 .sectionImage {
-
     margin-left: 55%;
     margin-bottom: 100%;
     position: relative;
     border-radius: 0 20px 20px 0px;
-
-}
-
-.sectionEscolha {
-
-    height: 80vh;
-    width: 20vw;
-    position: absolute;
-    padding-top: 3vh;
-
 }
 
 .middleSectionPrincipal {
-
+    margin: auto;
     width: 530px;
     height: 530px;
-    margin-left: 230px;
-    margin-top: 170px;
-
 }
 
 .firstLinhaSignup {
-
     width: 100%;
     height: 70px;
-
 }
 
 .secondLinhaSignup {
-
     width: 80%;
     height: 35px;
     margin: 0 auto;
@@ -63,49 +49,39 @@
     font-size: 25px;
     display: flex;
     justify-content: center;
-
 }
 
 .sectionBotaoEscolha {
-
     width: 70%;
     height: 200px;
     margin-top: 60px;
     margin-left: 84px;
-
 }
 
 .possueCadastro {
-
     width: 100%;
     height: 35px;
     margin-top: 30px;
-
 }
 
 .atributosPrimeiraLinha {
-
     width: 90%;
     height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .signUph1 {
-
     margin: 0 15px 0 15px;
     font-weight: 600;
-
 }
 
 .botaoCadastroContaProfissional {
-
     width: 100%;
     height: 59px;
-    background-color: #FF9313; 
+    background-color: #FF9313;
     border: none;
     color: white;
     text-align: center;
@@ -116,21 +92,17 @@
     font-size: 28px;
     font-weight: 400;
     border-radius: 6px;
-
 }
 
 .botaoCadastroContaProfissional:hover {
-
     color: white;
     background-color: #e08516;
-
 }
 
 .botaoCadastroEmpresa {
-
     width: 100%;
     height: 59px;
-    background-color: #BEA7E5; 
+    background-color: #BEA7E5;
     border: none;
     color: white;
     text-align: center;
@@ -141,59 +113,47 @@
     font-size: 28px;
     font-weight: 400;
     border-radius: 6px;
-
 }
 
 .botaoCadastroEmpresa:hover {
-
     color: white;
     background-color: #ac95d3;
-
 }
 
 .h1Cadastro {
-
     color: black;
     font-size: 30px;
     margin: 15px 0 15px 0;
     display: flex;
     justify-content: center;
-    
 }
 
 .possueCadastro {
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .linkCadastro {
-
     color: black;
     font-size: 18px;
     opacity: 100%;
     text-decoration: none;
     margin-top: 3.5%;
-    
 }
 
 .loginLink {
-
     color: #FF9313;
     font-size: 18px;
     opacity: 100%;
     margin-left: 8px;
     font-weight: 700;
-    
 }
 
 .botaoBackHome {
-
     height: 300px;
     margin-left: 30px;
     margin-top: 100px;
-
 }
 
 .sectionImage img {

@@ -11,7 +11,7 @@ class Banner extends Component {
 
     render(){
         return (
-                <div className="fundoBanner_img" style={{backgroundImage : `url(${this.props.img})`}}>
+                <div className={`fundoBanner_img ` + this.props.position} style={{backgroundImage : `url(${this.props.img})`}}>
                         <div className="banner">
                             <Link to="/" ><img src={back} onClick={this.backHome} /></Link>
                             <div className="textos">

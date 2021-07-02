@@ -1,25 +1,21 @@
 .tabelaVagasEmpresa {
-
     width: 100%;
     margin-top: 3vh;
     margin-left: 2vw;
-
 }
 
-.englobatudoNaPaginiaListagemDeVagas{
-
+.englobatudoNaPaginiaListagemDeVagas {
     background-color: #F8EFEF;
 }
-.estilizacaoDePaginaListagemVaga{
 
+.estilizacaoDePaginaListagemVaga {
     min-height: 48vh;
     display: flex;
     margin: 0 auto;
     justify-content: space-around;
-
 }
 
-.botaoAlterarStatusVagaAtivo{
+.botaoAlterarStatusVagaAtivo {
     height: 1em;
     width: 2em !important;
     min-width: 2em;
@@ -29,28 +25,28 @@
     background-color: rgb(149, 255, 167);
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
 }
-.StatusDeotaoAtivado{
-height: 0.9em;
-width: 0.9em;
-border-radius: 2em;
-border: none;
-background-color: rgb(255, 255, 255);
+
+.StatusDeotaoAtivado {
+    height: 0.9em;
+    width: 0.9em;
+    border-radius: 2em;
+    border: none;
+    background-color: rgb(255, 255, 255);
 }
 
-.botaoAlterarStatusVagaDesativado{
+.botaoAlterarStatusVagaDesativado {
     height: 1em;
     width: 2em;
     min-width: 2em;
     margin-top: 1em;
     border-radius: 2em;
-    border: solid 1px  #b1b1b1;
+    border: solid 1px #b1b1b1;
     background-color: rgb(255, 142, 142);
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     position: relative;
 }
 
-.StatusDeotaoDesatvado{
-
+.StatusDeotaoDesatvado {
     height: 0.9em;
     width: 0.9em;
     border-radius: 2em;
@@ -61,33 +57,36 @@ background-color: rgb(255, 255, 255);
     top: 0px;
 }
 
-.LinkDeCardsDeVagaListagemdeVagas{
+.LinkDeCardsDeVagaListagemdeVagas {
     height: 14em;
     margin-right: 5vw;
     text-decoration: none;
 }
 
-.cardiBotao_Titulo{
+.cardiBotao_Titulo {
     display: flex;
     width: 23vw;
 }
 
-.cardiBotao_Titulo h1{
+.cardiBotao_Titulo h1 {
     margin-top: 2vh;
 }
 
 .sectionDeCardsDasVagas {
-    max-height: 31em;
+    max-height: 85vh;
     overflow-y: auto;
-    width: 40vw;
-    min-width: 50vw;
+    width: 50vw;
+    height: 75vh;
+    min-width: 56vw;
     margin-right: 4vw;
     display: flex;
     justify-content: space-between;
     word-wrap: break-word;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.sectionDeCardsDasVagas::-webkit-scrollbar{
+.sectionDeCardsDasVagas::-webkit-scrollbar {
     height: 1vh;
     width: 0;
 }
@@ -97,16 +96,16 @@ background-color: rgb(255, 255, 255);
 }
 
 .sectionDeCardsDasVagas::-webkit-scrollbar-thumb {
-  background: #1A82D6;
+    background: #1A82D6;
 }
+
 .sectionDeCardsDasVagas::-webkit-scrollbar-thumb:hover {
     background: #1265a8;
-  }
+}
 
-.cardsDeVagas{
-    
+.cardsDeVagas {
     color: #444;
-    background-color: #eaeaea ;
+    background-color: #eaeaea;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
@@ -114,22 +113,20 @@ background-color: rgb(255, 255, 255);
     border-radius: 10px;
     border: 1px solid #C1C1C1;
     min-width: 21vw;
-    max-width: 21vw;
+    max-width: 25vw;
     height: 24em;
     margin-top: 4em;
 }
 
-
-.TituloCardaVagas{
-    width: 70%;
+.TituloCardaVagas {
+    width: 80%;
     color: black;
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 4vh;
-
 }
 
-.cardiparaEstilizacaoDeListagemDeVaga{
+.cardiparaEstilizacaoDeListagemDeVaga {
     min-width: 100%;
     padding: 0 1em 1em 1em;
     font-size: 1.1em;
@@ -141,58 +138,47 @@ background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
 
-.localeFaixaSalarialCard{
+.localeFaixaSalarialCard {
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
 }
 
 .linkDetalhesVaga {
-
     text-decoration: none;
-
 }
 
 .botaoVerVaga {
-
     width: 10vw;
     min-height: 4vh;
-    background-color: #00CA51; 
+    background-color: #00CA51;
     border: none;
     color: white;
     text-decoration: none;
     font-size: 20px;
     border-radius: 6px;
     margin-top: 2vh;
-
 }
 
 .botaoVerVaga:hover {
-
     background-color: #1A82D6;
-
 }
 
 .botaoVerVaga a {
-
     text-decoration: none;
     color: white;
-
 }
 
 .sectionCampoBuscaVagas {
-
     min-width: 1vw;
     max-width: 49vw;
     margin-top: 5vh;
-    margin-left: 39.5vw;
+    margin-left: 35.5vw;
     display: flex;
     flex-direction: row;
-
 }
 
 .sectionCampoBuscaVagas input {
-
     width: 100%;
     height: 6vh;
     padding-left: 1vw;
@@ -200,11 +186,9 @@ background-color: rgb(255, 255, 255);
     outline: none;
     border: #C1C1C1;
     box-shadow: 1px 3px 5px 0px #C1C1C1;
-
 }
 
 .sectionCampoBuscaVagas button {
-
     width: 5vw;
     height: 6vh;
     background-color: #1A82D6;
@@ -212,21 +196,18 @@ background-color: rgb(255, 255, 255);
     outline: none;
     border-radius: 0px 10px 10px 0px;
     margin-right: 2vw;
-
 }
 
 .sectionCampoBuscaVagas img {
-
     min-width: 1vw;
     max-width: 10vw;
     height: 3vh;
-
 }
 
 
 /* CSS do Filtro Lateral */
 
-.FiltoDeVagasListagem{
+.FiltoDeVagasListagem {
     background-color: #eeeeee;
     box-sizing: border-box;
     border: 1px solid #C1C1C1;
@@ -241,21 +222,16 @@ background-color: rgb(255, 255, 255);
 }
 
 .sectionFiltroPrincipal {
-
     height: 60vh;
     width: 15vw;
     margin-top: 4vh;
-
 }
 
 .sectionFiltroPrincipal h4 {
-
     color: #F1546E;
-
 }
 
 .filtroBuscaVaga {
-
     width: 15vw;
     height: 6vh;
     display: flex;
@@ -264,23 +240,19 @@ background-color: rgb(255, 255, 255);
     background-color: #FFCA8B;
     color: #FF8A00;
     border-radius: 10px;
-
 }
 
-.filtroBuscaVaga h3{
+.filtroBuscaVaga h3 {
     font-size: 20px;
 }
 
 .sectionFiltroRegiao {
-
     width: 15vw;
     height: 15vh;
     margin-top: 5vh;
-
 }
 
-.sectionFiltroRegiao input{
-
+.sectionFiltroRegiao input {
     width: 15vw;
     height: 5vh;
     margin-top: 2vh;
@@ -289,20 +261,15 @@ background-color: rgb(255, 255, 255);
     outline: none;
     border: none;
     box-shadow: 1px 3px 5px 0px #C1C1C1;
-
 }
 
-
-
 .sectionFiltroBeneficios {
-
     width: 15vw;
     height: 15vh;
     margin-top: 3vh;
 }
 
-.sectionFiltroBeneficios input{
-
+.sectionFiltroBeneficios input {
     width: 15vw;
     height: 5vh;
     margin-top: 2vh;
@@ -311,19 +278,15 @@ background-color: rgb(255, 255, 255);
     outline: none;
     border: none;
     box-shadow: 1px 3px 5px 0px #C1C1C1;
-
 }
 
 .sectionBotaoFiltro {
-
     width: 15vw;
     height: 5vh;
     margin-top: 3vh;
-
 }
 
 .sectionBotaoFiltro button {
-
     width: 15vw;
     height: 6vh;
     background-color: #00C74F;
@@ -333,13 +296,16 @@ background-color: rgb(255, 255, 255);
     box-shadow: 1px 3px 5px 0px #C1C1C1;
     font-weight: 500;
     font-size: 30px;
-
-
 }
 
 .sectionBotaoFiltro button:hover {
-
     background-color: #10b150;
-
 }
 
+.card-text-descricao {
+    margin-bottom: 0.6em;
+    max-Width: 95%;
+    margin-bottom: 0.6em;
+    max-width: 100%;
+    text-align: justify;
+}

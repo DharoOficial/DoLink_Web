@@ -109,7 +109,7 @@ const MatchProfissional = () => {
                                                 <div className="cardiparaEstilizacaoDeListagemDeMatch">
                                                     <p className="TituloCardaMatch">{item.titulo}</p>
                                                     <p style={{ 'margin-bottom': '0.6em', 'maxWidth': '95%' }}>{item.descricao.substring(0, 60)}...</p>
-                                                    <p style={{ 'margin-bottom': '0.6em' }}>Faixa Salarial:</p>
+                                                    <p style={{ 'margin-bottom': '0.6em' }}><strong>Faixa Salarial</strong>:</p>
                                                     <p style={{ 'margin-bottom': '0.6em' }}>R${item.faixaSalarial}</p>
     
                                                     <button onClick={e => darMatch(e, item.id)} className="botaoDarMatch" type="submit">Dar Match!</button>

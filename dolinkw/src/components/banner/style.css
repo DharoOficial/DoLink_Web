@@ -1,81 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
-
-.fundoBanner_img{
+.fundoBanner_img {
     width: 45vw;
     height: 100vh;
     border-radius: 0px 30px 30px 0px;
     box-shadow: 5px 5px 2px #aaaaaa;
-
     background-size: 90vw 100%;
     background-repeat: no-repeat;
     background-position: -25vw;
 }
 
-.banner{
+.banner {
     background-color: rgba(26, 130, 214, 0.8);
-
     height: 100%;
     border-radius: 0px 30px 30px 0px;
 }
 
-.banner img{
+.right {
+    border-radius: 30px 0px 0px 30px !important;
+}
+
+.right .banner {
+    border-radius: 30px 0px 0px 30px !important;
+    box-shadow: 6px 6px 6px 11px #aaaaaa !important;
+}
+
+.right .banner img {
+    opacity: 0;
+}
+
+.right .textos {
+    align-items: flex-end;
+}
+
+.right .textos img {
+    opacity: 1;
+}
+
+.right .textos p,
+.right .textos h1 {
+    text-align: right;
+}
+
+.right .textos p {
+    width: 30vw;
+}
+
+.right .textos h1 {
+    width: 33vw;
+}
+
+.banner img {
     width: 4vw;
     margin: 30px 0px 0px 30px;
     position: relative;
     cursor: pointer;
 }
 
-.textos{
+.textos {
     font-family: 'Raleway', sans-serif;
     margin: 8em 0em 0em 4em;
     width: 35vw;
     padding: 2em;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.textos img{
+.textos img {
     width: 10vw;
     margin: 0;
     margin-left: 5px;
 }
 
-.textos h1{
-    font-family: 'Raleway', sans-serif;;
+.textos h1 {
+    font-family: 'Raleway', sans-serif;
+    ;
     font-weight: bold;
     font-size: 3em;
     color: white;
     margin: 0.5em 0em;
 }
 
-.textos p{
+.textos p {
     color: white;
     font-weight: 500;
     font-size: 1.4em;
     width: 28vw;
 }
 
-@media(min-width : 2559){
-    .fundoBanner_img{
+@media(min-width: 2559) {
+    .fundoBanner_img {
         background-position: -600px;
     }
-
     .textos {
         padding: 5em;
     }
-
     .textos h1 {
         font-size: 95px;
     }
 }
 
-@media(max-width : 1220px){
+@media(max-width: 1220px) {
     .textos h1 {
         font-size: 3em;
     }
-
     .textos p {
         color: white;
         font-weight: 500;
@@ -84,52 +112,46 @@
     }
 }
 
-@media(max-width : 1024px){
+@media(max-width: 1024px) {
     .fundoBanner_img {
         width: 55vw;
         background-size: 100vw 100%;
         background-position: -33vw;
     }
-
     .textos {
         margin: 6em 0em 0em 3em;
         width: 35vw;
         padding: 1.5em;
     }
-
     .textos h1 {
         font-size: 2.5em;
     }
-
     .container_form {
         width: 60vw;
     }
-
     .textos p {
         font-size: 1.1em;
         width: 30vw;
     }
 }
 
-@media(max-width : 980){
-    .fundoBanner_img{
+@media(max-width: 980) {
+    .fundoBanner_img {
         background-size: 110vw 100%;
         background-repeat: no-repeat;
         background-position: -450px;
     }
 }
 
-@media(max-width : 769px){
+@media(max-width: 769px) {
     .textos {
         margin: 6em 2em 0em;
         width: 42vw;
         padding: 1em;
     }
-
     .textos h1 {
         font-size: 2.3em;
     }
-
     .textos p {
         font-size: 1em;
         width: 33vw;

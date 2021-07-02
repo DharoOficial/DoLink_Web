@@ -107,7 +107,7 @@ const CadastroEmpresa = () => {
                         <Form.Text className="text-muted"/>
                     </Form.Group>
                     <div className="buttons_empresa">
-                        <p>Já possui uma conta? <a href="/">Login</a></p>
+                        <p>Já possui uma conta? <a href="/login">Login</a></p>
                         {
                             email === '' || senha === '' || nome === '' || telefone === '' ?
                                 <Button variant="success" type="submit" className="confirm" disabled>Cadastrar-se

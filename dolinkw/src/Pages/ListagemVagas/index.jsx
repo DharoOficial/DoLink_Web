@@ -177,13 +177,15 @@ const ListagemVagas = () => {
                                     <div className="LinkDeCardsDeVagaListagemdeVagas" >
                                         <div className="cardsDeVagas">
                                             <div className="cardiparaEstilizacaoDeListagemDeVaga">
-                                                <div className="cardiBotao_Titulo">
-                                                    {Botao(item.status, item.id)}
-                                                    <p className="TituloCardaVagas">{item.titulo}</p>
+                                                <div className="cards-texts">
+                                                    <div className="cardiBotao_Titulo">
+                                                        {Botao(item.status, item.id)}
+                                                        <p className="TituloCardaVagas">{item.titulo}</p>
+                                                    </div>
+                                                    <p className="card-text-descricao">Descrição: {item.descricao.substring(0, 100)}...</p>
+                                                    <p style={{ 'margin-bottom': '0.6em' }}><strong>Local:</strong> {item.local}</p>
+                                                    <p style={{ 'margin-bottom': '0.6em' }}><strong>Faixa Salarial:</strong> R$ {item.faixaSalarial}</p>
                                                 </div>
-                                                <p style={{ 'margin-bottom': '0.6em', 'maxWidth': '95%' }}>Descrição: {item.descricao.substring(0, 60)}...</p>
-                                                <p style={{ 'margin-bottom': '0.6em' }}>Local: {item.local}</p>
-                                                <p style={{ 'margin-bottom': '0.6em' }}>Faixa Salarial: R$ {item.faixaSalarial}</p>
                                                 <button className="botaoVerVaga"><Link to={{ pathname: '/vagancy-details', state: { IdVaga: item.id } }}>Ver Matchs</Link></button>
                                             </div>
                                         </div>

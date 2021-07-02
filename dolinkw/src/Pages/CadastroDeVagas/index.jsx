@@ -26,12 +26,11 @@ const CadastroDeVagas = () => {
         id: "", nome: "", nivel: 0, hash: "", tipo : 1
     }])
     const [skillDesejadaItems, setSkillDesejadaItems] = useState([{
-        id: "", nome: "", nivel: 0, hash: "", tipo : 2
+        id: "", nome: "", nivelDesejada: 0, hash: "", tipo : 2
     }])
 
 
     const setSkillRequeridValue = (position, campo, valor) => {
-        console.log(skills)
         let val = valor.split('|')[1]
         console.log(skills.indexOf(val))
         const atualizarSkillItems = skillItems.map((skillItem, index) => {
@@ -84,7 +83,7 @@ const CadastroDeVagas = () => {
         setSkillDesejadaItems([
             ...skillDesejadaItems,
             {
-                id: "", nome: "", nivel: 0, hash: "", tipo : 2
+                id: "", nome: "", nivelDesejada: 0, hash: "", tipo : 2
             }
         ])
 
@@ -151,6 +150,10 @@ const CadastroDeVagas = () => {
             setSkills(resultado.data.data);
         })
         .catch((err) => console.log(err))
+    }
+
+    const mostrarSkill = () =>{
+        console.log(skillDesejadaItems)
     }
 
     return (
@@ -286,6 +289,7 @@ const CadastroDeVagas = () => {
                                 <button type="button" className="disabled" disabled>Salvar cadastro</button>
                                 :
                                 <button type="submit" className="createButton" onClick={e => cadastrar(e)}>Salvar cadastro</button>
+                                //{/* <button type="button" className="createButton" onClick={e => mostrarSkill()}>Salvar cadastro</button> */}
                         }
                     </footer>
                 </Form>

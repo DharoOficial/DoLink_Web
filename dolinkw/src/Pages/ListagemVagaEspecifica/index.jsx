@@ -7,6 +7,8 @@ import {  Button, Table  } from 'react-bootstrap';
 import Header from '../../components/header';
 import Rodape from '../../components/footer'
 import Acessiblidade from '../../utils/acessibility'
+import foguinho from '../../imgs/icons/fogo.svg'
+import money from '../../imgs/icons/money.svg'
 
 const ListagemVagaEspecifica = (props) => {
     
@@ -46,12 +48,13 @@ const ListagemVagaEspecifica = (props) => {
                 'Authorization' : `Bearer ${token}`
             }
         })
+        .then(resultado => resultado.json())
         .then(resultado =>{
-            setTitulo(resultado.data.data.titulo)
-            setFaixaSalarial(resultado.data.data.faixaSalarial)
-            setLocal(resultado.data.data.local)
-            setDescricao(resultado.data.data.descricao)
-            setBeneficios(resultado.data.data.beneficios)
+            setTitulo(resultado.data.titulo)
+            setFaixaSalarial(resultado.data.faixaSalarial)
+            setLocal(resultado.data.local)
+            setDescricao(resultado.data.descricao)
+            setBeneficios(resultado.data.beneficios)
         })
         .catch(erro =>{
             console.error(`erro ${erro}`);
@@ -68,22 +71,15 @@ const ListagemVagaEspecifica = (props) => {
         })
         .then(resultado => resultado.json())
         .then(resultado => {
-
             setNome(resultado.data.nome)
             setEmail(resultado.data.email)
             setTelefone(resultado.data.telefone)
             setProfissionais(resultado.data)
-
         })
         .catch(erro =>{
             console.error(`erro ${erro}`);
         })
     }
-
-    // function copyRoomCode() {
-    //     navigator.clipboard.writeText(email);
-    // }
-
     return(
 
         <div>
@@ -104,13 +100,13 @@ const ListagemVagaEspecifica = (props) => {
                         <div className="sectionInfoVaga">
 
                             <h1 className="tituloVaga" >{titulo}</h1>
-                            <p className="salarioVaga" >Salário: R${faixaSalarial}</p>
-                            <p className="descricaoVaga" >Descrição: {descricao}</p>
+                            <p className="salarioVaga" ><strong>Salário:</strong> R${faixaSalarial}</p>
+                            <p className="descricaoVaga" >Descrição: {descricao.substring(0, 100)}...</p>
 
                             <div className="sectionMatchAltura">
 
                                 {
-                                    profissionais.count === 0
+                                    profissionais.length === 0
                                     ? (
                                         <h3>Nenhum match foi encontrado :(</h3>
                                     )
@@ -120,10 +116,25 @@ const ListagemVagaEspecifica = (props) => {
                                             return(
                                                     <div className="sectionMatchProf">
                                                         <div className="sectionMatchProfLargura">
-                                                            <p className="dadosProfMatch" >{item.dadosProfissional.nome}</p>
-                                                            <p className="dadosProfMatch">{item.dadosProfissional.email}</p>
-                                                            <p className="dadosProfMatch">{item.dadosProfissional.telefone}</p>
-                                                            <button className="chatMatch">Chat</button>
+                                                            <p className="dadosProfMatch" ><strong>{item.dadosProfissional.nome}</strong></p>
+                                                            <p className="dadosProfMatch">{item.dadosProfissional.email.substring(0, 10)}...</p>
+                                                            <p className="dadosProfMatch">{item.dadosProfissional.telefone.substring(0, 8)}...</p>
+                                                            {
+                                                                item.nivelAcesso === 3 ? 
+                                                                    <div className="niveis">
+                                                                        <img src={foguinho} alt=""/>
+                                                                        <img src={money} alt=""/>
+                                                                    </div>
+                                                                :
+                                                                    item.nivelAcesso === 2 ?
+                                                                        <div className="niveis">
+                                                                            <img src={foguinho} alt=""/>
+                                                                        </div>
+                                                                    :
+                                                                    <div className="niveis">
+                                                                        <img src={money} alt=""/>
+                                                                    </div>
+                                                            }
                                                         </div>
                                                     </div>                                                                    
                                             )

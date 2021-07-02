@@ -96,7 +96,7 @@ const Login = () => {
                                     <a className="esqueciMinhaSenhaLink" href="/forget/password">Esqueceu Sua Senha?</a>
                                     <button type="submit" onClick={logar} className="botaoLoginAccount">Sign In</button>
 
-                                    <p className="cadastrarContaLink" >Não possue uma conta? <a href="/choosesignup">Cadastre-se!</a></p>
+                                    <p className="cadastrarContaLink" >Não possue uma conta? <a href="/choose/signup">Cadastre-se!</a></p>
                                 </div>
                             </div>
                         </div>

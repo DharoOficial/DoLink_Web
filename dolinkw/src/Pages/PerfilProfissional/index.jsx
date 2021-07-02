@@ -254,17 +254,6 @@ const PerfilProfissional = () => {
                             </Form.Group>
                         </div>
                     </fieldset>
-                    <fieldset>
-                    <legend>Habilidades e skills  <hr/></legend>
-                    <div className="campos">
-                        <div className="campos-select">
-                            <button type="button" className="botaoAddSkill"
-                                        /*onClick={addNovaSkillItem}*/>+ adicionar habilidade</button>
-                            <div></div>
-                        </div>
-                        
-                    </div>
-                </fieldset>
                     <div className="buttons_empresa">
                         <Button variant="success" type="submit" className="confirm">Editar dados</Button>
                     </div>

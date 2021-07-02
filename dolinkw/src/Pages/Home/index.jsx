@@ -77,7 +77,7 @@ const Home = () => {
 
           <div className="textoDireito">
 
-            <a class="botaoVaga">
+            <a class="botaoVaga" href="/company/create">
               Divulgar Vaga
             </a>
 
@@ -112,8 +112,8 @@ const Home = () => {
 
       </div>
 
-      {/* <Footer /> */}
 
+      {/* <Footer /> */}
     </div>
   );
 };

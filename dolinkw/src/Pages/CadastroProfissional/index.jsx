@@ -3,6 +3,8 @@ import {  url, urlLucas, publish } from '../../utils/constants';
 import {useHistory} from 'react-router-dom';
 import {  useToasts  } from 'react-toast-notifications';
 import Banner from '../../components/banner'
+import back from '../../imgs/icons/back-black.svg'
+import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap'
 import jwtDecode from 'jwt-decode';
 import './index.css';
@@ -82,54 +84,57 @@ const CadastroProfissional = () => {
     }
 
     return(
-        <div className="container_profissional_principal">
-            <Banner titulo="Preencha seus dados pessoais"
-                        texto="Informe seus dados para que possamos te ajudar a encontrar o emprego dos sonhos!"
-                        img="https://blog.ipog.edu.br/wp-content/uploads/2018/02/Profissional-de-TI.jpg"
-                    />
-            <div className="container_profissional_form">
-                <div className="titulo_profissional">
-                    <hr/>
-                    <h1>Sign Up</h1>
-                    <hr/>
-                </div>
-
-                <Form className="formulario_profissional">
-                    <Form.Group controlId="formBasicNome">
-                        <Form.Control type="text" placeholder="Informe seu nome ..."
-                                    value={nome} onChange={e => setNome(e.target.value)}/>
-                        <Form.Text className="text-muted"/>
-                    </Form.Group>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Informe seu email ..."
-                                    value={email} onChange={e => setEmail(e.target.value)}/>
-                        <Form.Text className="text-muted"/>
-                    </Form.Group>
-                    <Form.Group controlId="formBasicSenha">
-                        <Form.Control type="password" placeholder="Informe sua senha ..."
-                                        value={senha} onChange={e => setSenha(e.target.value)}/>
-                        <Form.Text className="text-muted"/>
-                    </Form.Group>
-                    <Form.Group controlId="formBasicTelefone">
-                        <Form.Control type="tel" placeholder="Informe seu telefone ..."
-                                        value={telefone} onChange={e => setTelefone(e.target.value)}/>
-                        <Form.Text className="text-muted"/>
-                    </Form.Group>
-                    <div className="buttons_profissional">
-                        <p>Já possui uma conta? <a href="/">Login</a></p>
-                        {
-                            email === '' || senha === '' || nome === '' || telefone === '' ?
-                                <Button variant="success" type="submit" className="confirm" disabled>Cadastrar-se
-                                </Button>
-                                :
-                                <Button variant="success" type="submit" className="confirm" onClick={e => cadastrar(e)}>
-                                    Cadastrar-se
-                                </Button>
-                        }
+        <>
+            <Link to="/" ><img src={back} className="back-pag" /></Link>
+            <div className="container_profissional_principal">
+                <Banner titulo="Preencha seus dados pessoais" position="right"
+                            texto="Informe seus dados para que possamos te ajudar a encontrar o emprego dos sonhos!"
+                            img="https://www.expociee.com.br/wp-content/uploads/2020/10/Blogpost-Expo-CIEE-Estacio-30.jpg"
+                        />
+                <div className="container_profissional_form">
+                    <div className="titulo_profissional">
+                        <hr/>
+                        <h1>Sign Up</h1>
+                        <hr/>
                     </div>
-                </Form>
+
+                    <Form className="formulario_profissional">
+                        <Form.Group controlId="formBasicNome">
+                            <Form.Control type="text" placeholder="Informe seu nome ..."
+                                        value={nome} onChange={e => setNome(e.target.value)}/>
+                            <Form.Text className="text-muted"/>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Control type="email" placeholder="Informe seu email ..."
+                                        value={email} onChange={e => setEmail(e.target.value)}/>
+                            <Form.Text className="text-muted"/>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicSenha">
+                            <Form.Control type="password" placeholder="Informe sua senha ..."
+                                            value={senha} onChange={e => setSenha(e.target.value)}/>
+                            <Form.Text className="text-muted"/>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicTelefone">
+                            <Form.Control type="tel" placeholder="Informe seu telefone ..."
+                                            value={telefone} onChange={e => setTelefone(e.target.value)}/>
+                            <Form.Text className="text-muted"/>
+                        </Form.Group>
+                        <div className="buttons_profissional">
+                            <p>Já possui uma conta? <a href="/login">Login</a></p>
+                            {
+                                email === '' || senha === '' || nome === '' || telefone === '' ?
+                                    <Button variant="success" type="submit" className="confirm" disabled>Cadastrar-se
+                                    </Button>
+                                    :
+                                    <Button variant="success" type="submit" className="confirm" onClick={e => cadastrar(e)}>
+                                        Cadastrar-se
+                                    </Button>
+                            }
+                        </div>
+                    </Form>
+                </div>
             </div>
-        </div>
+        </>
     )
 
 }

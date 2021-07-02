@@ -4,12 +4,13 @@ import Rodape from '../../components/footer';
 import jwtDecode from 'jwt-decode';
 import {  url, publish  } from '../../utils/constants';
 import {  useHistory  } from 'react-router-dom';
+import { useToasts } from 'react-toast-notifications'
 import './index.css'
 import empresaServico from '../../servicos/empresaServico';
 import Acessiblidade from '../../utils/acessibility'
 
 const MatchConfirmadoProf = () => {
-    
+    const { addToast } = useToasts();
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [local, setLocal] = useState('');
@@ -25,7 +26,7 @@ const MatchConfirmadoProf = () => {
         Acessiblidade();
         listarMatch();
 
-    }, [matchs])
+    }, [])
 
     const token = localStorage.getItem('token-dolink');  
     const idProfissional = jwtDecode(token).Id;
@@ -52,21 +53,25 @@ const MatchConfirmadoProf = () => {
     const excluirMatch = (event, id) => {
         event.preventDefault();
 
-        fetch(`${publish}match/remove/` + id, {
+        fetch(`${publish}/match/remove/` + id, {
             method: 'DELETE',
             headers: {
                 'authorization': 'Bearer ' + token,
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-
                 id : id
-
             }),
         })
             .then(response => response.json())
             .then(response => {
-                alert('Match cancelado!')
+                
+                if(response.sucesso) {
+                    addToast(response.mensagem, { appearance: 'success', autoDismiss : true })
+                    listarMatch()
+                } else {
+                    addToast(response.mensagem, { appearance: 'error', autoDismiss : true })
+                }
             })
     }
 
@@ -85,7 +90,7 @@ const MatchConfirmadoProf = () => {
 
                 
 
-                <main>
+            <main style={{'margin-bottom': '5em'}}>
 
                
 
@@ -106,7 +111,7 @@ const MatchConfirmadoProf = () => {
                                                 <div className="cardiparaEstilizacaoDeListagemDeMatch">
                                                     <p className="TituloCardaMatch">{item.dadosVaga.titulo}</p>
                                                     <p style={{ 'margin-bottom': '0.6em', 'maxWidth' : '95%'  }}>{item.dadosVaga.descricao.substring(0, 100)}...</p>
-                                                    <p style={{ 'margin-bottom': '0.6em' }}>Local: {item.dadosVaga.local}</p>
+                                                    <p style={{ 'margin-bottom': '0.6em' }}><strong>Local:</strong> {item.dadosVaga.local}</p>
                                                     
                                                     <button onClick={e => excluirMatch(e, item.id)} className="botaoRemoverMatch"  type="submit">Cancelar Match!</button>
                                                     
